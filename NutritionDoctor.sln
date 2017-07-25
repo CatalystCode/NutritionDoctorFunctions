@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26720.2
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NutritionDoctor", "NutritionDoctor\NutritionDoctor.csproj", "{9440A7EF-3730-4231-9B2E-19FCD2821090}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NutritionDoctor", "NutritionDoctor\NutritionDoctor.csproj", "{F6679C6D-42B5-46A8-95A0-00655B764511}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{9440A7EF-3730-4231-9B2E-19FCD2821090}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{9440A7EF-3730-4231-9B2E-19FCD2821090}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{9440A7EF-3730-4231-9B2E-19FCD2821090}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{9440A7EF-3730-4231-9B2E-19FCD2821090}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F6679C6D-42B5-46A8-95A0-00655B764511}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F6679C6D-42B5-46A8-95A0-00655B764511}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F6679C6D-42B5-46A8-95A0-00655B764511}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F6679C6D-42B5-46A8-95A0-00655B764511}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {3C3A47DB-38E3-4BFB-BCFF-3EE955060FBA}
+		SolutionGuid = {D1F26977-ABB5-4098-8C90-8D05DB73B7C2}
 	EndGlobalSection
 EndGlobal
