@@ -34,6 +34,7 @@ namespace NutritionDoctor
 
             var rowId = await mysql.InsertAsync(job.UserId, job.ImageUrl, customVisionPrediction.Tag, customVisionPrediction.Probability.ToString(), "CustomVision");
             log.Info($"CustomVision MySQL Row: {rowId}");
+
             rowId = await mysql.InsertAsync(job.UserId, job.ImageUrl, azureMLPrediction.Tag, azureMLPrediction.Probability.ToString(), "AzureMachineLearning");
             log.Info($"Azure Machine Learning MySQL Row: {rowId}");
         }
