@@ -11,7 +11,11 @@ namespace NutritionDoctor
         public static void Run([QueueTrigger("queue-identifyjob", Connection = "pingan-storage")]string myQueueItem, TraceWriter log)
         {
             log.Info($"C# Queue trigger function processed: {myQueueItem}");
-            new MySqlStore().GetTables("");
+            var mysql = new MySqlStore(log);
+            using (var connection = mysql.Connect())
+            {
+                mysql.GetTables("");
+            }
         }
     }
 }

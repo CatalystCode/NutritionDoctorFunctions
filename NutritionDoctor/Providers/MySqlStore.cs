@@ -1,4 +1,5 @@
-﻿using MySql.Data.MySqlClient;
+﻿using Microsoft.Azure.WebJobs.Host;
+using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -15,11 +16,13 @@ namespace NutritionDoctor.Providers
             get { return Environment.GetEnvironmentVariable("pingan-mysqlconnectionstring"); }
         }
 
-        private readonly MySqlConnection connection;
+        private readonly MySqlConnection _connection;
+        private readonly TraceWriter _log;
 
-        public MySqlStore()
+        public MySqlStore(TraceWriter log)
         {
-            connection = new MySqlConnection
+            _log = log;
+            _connection = new MySqlConnection
             {
                 ConnectionString = ConnectionString
             };
@@ -27,32 +30,28 @@ namespace NutritionDoctor.Providers
 
         public void GetTables(string sql)
         {
-            using (var connection = new MySqlStore().Connect())
-            {
-                DataTable databases = connection.GetSchema("Databases");
+                DataTable databases = _connection.GetSchema("Databases");
                 foreach (DataRow database in databases.Rows)
                 {
                     foreach (DataRow row in databases.Rows)
                     {
                         foreach (var item in row.ItemArray)
                         {
-                            Console.Write("{0} ", item);
+                            _log.Info(item.ToString());
                         }
-                        Console.WriteLine();
                     }
                 }
-            }
         }
 
         public MySqlConnection Connect()
         {
-            connection.Open();
-            return connection;
+            _connection.Open();
+            return _connection;
         }
 
         public void Dispose()
         {
-            connection.Close();
+            _connection.Close();
         }
     }
 }
