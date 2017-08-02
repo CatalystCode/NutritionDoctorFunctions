@@ -1,8 +1,5 @@
-﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using NutritionDoctor.Providers.Prediction;
-using Microsoft.Azure.WebJobs.Host;
-using System.Diagnostics;
 
 namespace NutritionDoctor.Tests
 {
@@ -13,7 +10,7 @@ namespace NutritionDoctor.Tests
         public void AzureML_ChickenChowMeinTest()
         {
             var customVision = new AzureML(new MyTraceWriter());
-            var prediction = customVision.PredictAsync("https://pinganhackfest2017.blob.core.windows.net/roujiamo/download%20copy%202.jpg").Result;
+            var prediction = customVision.PredictAsync("https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Roujiamo.jpg/200px-Roujiamo.jpg").Result;
         }
     }
 }

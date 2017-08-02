@@ -17,8 +17,16 @@ namespace NutritionDoctor.Providers.Prediction
             public string[,] Values { get; set; }
         }
 
-        private const string url = "https://ussouthcentral.services.azureml.net/workspaces/6eb1c3c48c174fa782b3e6a48a27de84/services/20293eed6bcd422f927ea8ac484bdc30/execute?api-version=2.0&details=true";
-        private const string apiKey = "lbd8wyiCjjQtcmfrNtR2L+uRE5mGLRUQ3iKrtDkHsR++8w10FxMiNh8rF5jxDF87TeLbmg9YzhuvFi+Z3nA8Ig==";
+        private string AzureMLUrl
+        {
+            // Should be in the form of: https://<location>.services.azureml.net/.../execute?api-version=2.0&details=true";
+            get { return Environment.GetEnvironmentVariable("azureml-url"); }
+        }
+
+        private string AzureMLApiKey
+        {
+            get { return Environment.GetEnvironmentVariable("azureml-apikey"); }
+        }
 
         public AzureML(TraceWriter log) : base(log)
         {
@@ -28,8 +36,8 @@ namespace NutritionDoctor.Providers.Prediction
         {
             using (var client = new HttpClient())
             {
-                client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", apiKey);
-                client.BaseAddress = new Uri(url);
+                client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", AzureMLApiKey);
+                client.BaseAddress = new Uri(AzureMLUrl);
 
                 var scoreRequest = new
                 {
@@ -50,7 +58,7 @@ namespace NutritionDoctor.Providers.Prediction
 
                 var imagePrediction = new ImagePrediction
                 {
-                    Url = url
+                    Url = AzureMLUrl
                 };
 
                 if (response.IsSuccessStatusCode)

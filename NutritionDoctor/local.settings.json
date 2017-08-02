@@ -1,0 +1,19 @@
+{
+  "Values": {
+    "AzureWebJobsDashboard": "",
+    "AzureWebJobsStorage": "",
+    "FUNCTIONS_EXTENSION_VERSION": "",
+    "WEBSITE_CONTENTAZUREFILECONNECTIONSTRING": "",
+    "WEBSITE_CONTENTSHARE": "",
+    "WEBSITE_NODE_DEFAULT_VERSION": "",
+    "FUNCTION_APP_EDIT_MODE": "",
+    "pingan-storage": "",
+    "pingan-mysqlconnectionstring": "",
+    "azureml-url": "",
+    "azureml-apikey": "",
+    "customvision-url": "",
+    "customvision-predictionkey": "",
+    "customvision-modelid":  ""
+  },
+  "ConnectionStrings": {}
+}

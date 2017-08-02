@@ -1,7 +1,7 @@
-﻿using System;
-using System.Threading.Tasks;
+﻿using Microsoft.Azure.WebJobs.Host;
 using NutritionDoctor.Models;
-using Microsoft.Azure.WebJobs.Host;
+using System;
+using System.Threading.Tasks;
 
 namespace NutritionDoctor.Providers.Prediction
 {

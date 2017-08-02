@@ -3,7 +3,6 @@ using Microsoft.Azure.WebJobs.Host;
 using Newtonsoft.Json;
 using NutritionDoctor.Providers;
 using NutritionDoctor.Providers.Prediction;
-using System;
 
 namespace NutritionDoctor
 {
